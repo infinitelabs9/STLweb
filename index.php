@@ -17,15 +17,16 @@
         <div class="caja">Post</div>
         <div class="caja">Apply</div>
         <div class="caja">About Us</div>
-        <div class="caja">Login</div>
+        <div class="caja"><a href="pages/login.php">Login</a></div>
+        <div class="caja"><a href="pages/register.php">Register</a></div>
       </div>
     </div>
 
     <div class="imagen-text">
       <img src="pictures/contenedor2/1.jpg" alt="Imagen de club" />
-      <div class="text-inside">Fueling the Future,<br> One Launch at a </br>Time.</br>
-    </div>
-    
+      <div class="text-inside">
+        Fueling the Future,<br> One Launch at a Time.
+      </div>
     </div>
 
   </div>
