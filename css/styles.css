@@ -4,6 +4,11 @@ body {
     margin: 0;
     font-family: sans-serif;
 }
+a {
+  text-decoration: none;  /* Quita la línea debajo */
+  color: inherit;          /* Hace que el texto herede el color del padre (por ejemplo, blanco si .caja es blanco) */
+}
+
 .h1text{
     color: #000000;
     display: block;
@@ -240,27 +245,47 @@ color: #888888;
     justify-content: space-between;
   }
   .foot-sub1{
-    margin-top: 80px;
+  
     margin-left: 50px;
   
   }
   .foot-sub2{
-   
+
   }
+
   .foot-div2{
     margin-top: 80px;
     margin-left: 50px;
     color: #888888;
 
   }
+  .sub-foot{
+
+    margin-right: 17px;
+  }
+
+  .facebook-icon i {
+  color: #ffffff; /* Facebook */
+  font-size: 33px;
+}
+
+.instagram-icon i {
+  color: #ffffff; /* Instagram */
+  font-size: 33px;
+}
+
+.threads-icon i {
+  color: rgb(252, 252, 252); /* Threads */
+   font-size: 33px;
+}
   .foot-sub3{
     margin-top: 2px;
     flex-direction: column; 
     align-items: end;
     margin-right: 14px;
-   
-  
   }
+
+
   .foot-div{
     margin-top: 25px;
     margin-left: 50px;
