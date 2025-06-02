@@ -17,9 +17,9 @@
   STL<span class="highlight">club</span>
 </div>
       <div class="menu">
-        <a href="home.php"><div class="caja">Home</div></a>
+        <a href="page/home.php"><div class="caja">Home</div></a>
         <a href="post.php"><div class="caja">Post</div></a>
-        <a href="apply.php"><div class="caja">Apply</div></a>
+        <a href="pages/apply.php"><div class="caja">Apply</div></a>
         <a href="about.php"><div class="caja">About Us</div></a>
         <a href="login.php"><div class="caja">Login</div></a>
 
