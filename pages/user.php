@@ -1,82 +1,80 @@
 <?php
 session_start();
+
+// Redirect to login if not logged in
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit;
 }
-
-require_once __DIR__ . '/../database/db_conection.php';
-
-// Fetch user's attendance data
-$stmt = $pdo->prepare("SELECT * FROM attendance WHERE user_id = :uid ORDER BY date DESC");
-$stmt->execute(['uid' => $_SESSION['user_id']]);
-$attendance = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Your Dashboard - STLclub</title>
-  <link rel="stylesheet" href="../css/user-style.css">
+  <title>User Dashboard | STLclub</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
-      padding: 30px;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
     }
-    h1, h2 {
-      color: #333;
-    }
-    .logout {
-      float: right;
-      padding: 8px 12px;
-      background-color: crimson;
+
+    header {
+      background-color: #70c200;
+      padding: 20px;
       color: white;
-      text-decoration: none;
-      border-radius: 5px;
+      text-align: center;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
+
+    .container {
+      padding: 40px;
+      max-width: 800px;
+      margin: 0 auto;
       background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      margin-top: 40px;
     }
-    table, th, td {
-      border: 1px solid #ccc;
+
+    h2 {
+      margin-bottom: 10px;
     }
-    th, td {
-      padding: 12px;
-      text-align: left;
+
+    .info {
+      margin-top: 20px;
     }
-    th {
-      background-color: #eee;
+
+    .logout-btn {
+      background: #a30000;
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .logout-btn:hover {
+      background: #820000;
     }
   </style>
 </head>
 <body>
 
-  <a href="logout.php" class="logout">Logout</a>
+<header>
+  <h1>Welcome, <?= htmlspecialchars($_SESSION['first_name']) ?>!</h1>
+</header>
 
-  <h1>Welcome, <?= htmlspecialchars($_SESSION['email']) ?>!</h1>
-  <h2>Your Attendance</h2>
+<div class="container">
+  <h2>Your Information</h2>
+  <div class="info">
+    <p><strong>Email:</strong> <?= htmlspecialchars($_SESSION['email']) ?></p>
+    <p><strong>User ID:</strong> <?= htmlspecialchars($_SESSION['user_id']) ?></p>
+  </div>
 
-  <?php if (count($attendance) > 0): ?>
-    <table>
-      <tr>
-        <th>Date</th>
-        <th>Status</th>
-      </tr>
-      <?php foreach ($attendance as $record): ?>
-        <tr>
-          <td><?= htmlspecialchars($record['date']) ?></td>
-          <td><?= htmlspecialchars($record['status']) ?></td>
-        </tr>
-      <?php endforeach; ?>
-    </table>
-  <?php else: ?>
-    <p>You have no attendance records yet.</p>
-  <?php endif; ?>
+  <a href="logout.php" class="logout-btn">Logout</a>
+</div>
 
 </body>
 </html>

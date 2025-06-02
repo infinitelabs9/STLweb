@@ -1,5 +1,8 @@
 <?php
 session_start();
+session_unset();
 session_destroy();
-header("Location: login.php");
+
+// Redirect to STLweb/index.php
+header("Location: /STLweb/index.php");
 exit;
