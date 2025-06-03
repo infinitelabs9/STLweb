@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Diseño Responsivo</title>
-<link rel="stylesheet" href="../css/styles.css" />
+<link rel="stylesheet" href="../css/apply.css" />
+<link rel="stylesheet" href="apply.css?v=2">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
@@ -29,14 +31,84 @@
 
       </div>
     </div>
+ <div class="step-container">
+  <h2 class="step-title">Applications Forms</h2>
 
-    <div class="imagen-text">
-      <img src="../pictures/contenedor2/1.jpg" alt="Imagen de club" />
-      <div class="text-inside">Fueling the Future,<br> One Launch at a </br>Time.</br>
-      <p class="text-inside1-1"> Join STL, Tamkang University’s Rocketry Club, as we design, build, and launch high-powered rockets that push the limits of student innovation. From local projects to international competitions, we’re a team of dreamers, engineers, and explorers committed to shaping the future of aerospace.</p>
-      <a href=""><button class="button1">Apply</button></a>
+  <!-- Barra de progreso -->
+  <div class="step-progressbar">
+    <div class="step-wrapper">
+      <div class="step active">1</div>
+      <div class="step-label">Step 1</div>
     </div>
+    <div class="step-wrapper">
+      <div class="step">2</div>
+      <div class="step-label">Step 2</div>
     </div>
+    <div class="step-wrapper">
+      <div class="step">3</div>
+      <div class="step-label">Step 3</div>
+    </div>
+  </div>
+
+  <!-- Contenido por pasos -->
+  <form id="formSteps">
+    <div class="step-form step-form-active">
+      <h3>Basic Information</h3>
+      <label>Full Name</label>
+      <input type="text" placeholder="Full Name..." required>
+
+      <label>Student ID</label>
+      <input type="text" placeholder="Type your id number..." required>
+
+      <label>Email</label>
+      <input type="email" placeholder="Type your gmail..." required>
+
+      <label>Department</label>
+      <input type="text" placeholder="Type your Department..." required>
+      
+<label>CV</label>
+   <div class="file-input-container"> 
+  <label class="file-input-label" for="cv">Select CV file</label>
+  <input
+    type="file"
+    id="cv"
+    name="cv"
+    accept=".pdf, .doc, .docx, image/*"
+    required
+  >
+</div>
+
+      <label for="team">List Team</label>
+<div class="select-wrapper">
+  <select id="team" name="team" required>
+    <option value="">Select</option>
+    <option value="engineering">Engineering</option>
+    <option value="design">Design</option>
+    <option value="marketing">Marketing</option>
+  </select>
+</div>
+
+    </div>
+
+    <div class="step-form">
+      <h3>Additional Info</h3>
+      <label>Why do you want to join?</label>
+      <textarea placeholder="Typing..." required></textarea>
+    </div>
+
+    <div class="step-form">
+      <h3>Confirm</h3>
+      <p>Review your information before submitting.</p>
+      <!-- Aquí puedes mostrar un resumen si quieres -->
+    </div>
+
+    <div class="buttons">
+      <button type="button" id="prevBtn" style="display: none;">Back</button>
+      <button type="button" id="nextBtn">Next</button>
+    </div>
+  </form>
+</div>
+
     <div class="footer-con">  
   <h1 class="foot-sub1">
     STL<span class="highlight2">club</span>
@@ -81,5 +153,7 @@
 
 
   </div>
+  <script src="../js/apply.js"></script>
+
 </body>
 </html>
