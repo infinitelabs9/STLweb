@@ -52,33 +52,27 @@
 
   <!-- Contenido por pasos -->
   <form id="formSteps">
-    <div class="step-form step-form-active">
-      <h3>Basic Information</h3>
-      <label>Full Name</label>
-      <input type="text" placeholder="Full Name..." required>
+  <div class="step-form step-form-active">
+    <h3>Basic Information</h3>
 
-      <label>Student ID</label>
-      <input type="text" placeholder="Type your id number..." required>
+    <label>Full Name</label>
+    <input type="text" placeholder="Full Name..." required>
 
-      <label>Email</label>
-      <input type="email" placeholder="Type your gmail..." required>
+    <label>Student ID</label>
+    <input type="text" placeholder="Type your ID number..." required>
 
-      <label>Department</label>
-      <input type="text" placeholder="Type your Department..." required>
-      
-<label>CV</label>
-   <div class="file-input-container"> 
-  <label class="file-input-label" for="cv">Select CV file</label>
-  <input
-    type="file"
-    id="cv"
-    name="cv"
-    accept=".pdf, .doc, .docx, image/*"
-    required
-  >
-</div>
+    <label>Email</label>
+    <input type="email" placeholder="Type your email..." required>
 
-      <label for="team">List Team</label>
+    <label>Department</label>
+    <input type="text" placeholder="Type your Department..." required>
+
+    <label>CV</label>
+    <div class="file-input-container">
+      <label class="file-input-label" for="cv">Select CV file</label>
+      <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx,image/*" required>
+    </div>
+          <label for="team">List Team</label>
 <div class="select-wrapper">
   <select id="team" name="team" required>
     <option value="">Select</option>
@@ -87,26 +81,22 @@
     <option value="marketing">Marketing</option>
   </select>
 </div>
+  </div>
 
-    </div>
+  <!-- Otro paso -->
+  <div class="step-form">
+    <h3>More Info</h3>
+    <label>Why do you want to join?</label>
+    <textarea required></textarea>
+  </div>
 
-    <div class="step-form">
-      <h3>Additional Info</h3>
-      <label>Why do you want to join?</label>
-      <textarea placeholder="Typing..." required></textarea>
-    </div>
+  <!-- Botones fuera de los pasos -->
+  <div class="buttons">
+    <button type="button" id="prevBtn">Previous</button>
+    <button type="button" id="nextBtn">Next</button>
+  </div>
+</form>
 
-    <div class="step-form">
-      <h3>Confirm</h3>
-      <p>Review your information before submitting.</p>
-      <!-- Aquí puedes mostrar un resumen si quieres -->
-    </div>
-
-    <div class="buttons">
-      <button type="button" id="prevBtn" style="display: none;">Back</button>
-      <button type="button" id="nextBtn">Next</button>
-    </div>
-  </form>
 </div>
 
     <div class="footer-con">  
