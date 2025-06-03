@@ -329,7 +329,7 @@
       
     </div>
     <div class="footer-bottom">
-      <p>© 2025 STLclub. All rights reserved.</p>
+      <p>© 2025 STLclub. All rights reserved</p>
     </div>
   </footer>
 
