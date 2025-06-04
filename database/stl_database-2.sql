@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 
 --
 -- Database: `stl_database`
-USE stl_database;
-
 --
 
 -- --------------------------------------------------------
