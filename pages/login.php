@@ -144,6 +144,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       color: red;
       margin-bottom: 10px;
     }
+    .oauth-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background-color: #f1f1f1;
+  color: #333;
+  transition: background-color 0.2s;
+}
+
+.oauth-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.oauth-btn .icon {
+  width: 16px;
+  height: 16px;
+  object-fit: contain;
+}
+
+.oauth-btn.apple .icon {
+  width: 30px;  /* slightly bigger */
+  height: 25px;
+}
+
+
   </style>
 </head>
 <body>
@@ -158,8 +188,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <?php endif; ?>
 
   <form method="post" action="login.php">
-    <button type="button" class="oauth-btn">Continue with Google</button>
-    <button type="button" class="oauth-btn">Continue with Apple</button>
+  <button type="button" class="oauth-btn">
+  <img src="../pictures/logo/google.png" alt="Google" class="icon" />
+    Continue with Google
+</button>
+
+<button type="button" class="oauth-btn apple">
+  <img src="../pictures/logo/apple.png" alt="Apple" class="icon" />
+  Continue with Apple
+</button>
+
+
 
     <input type="email" name="email" placeholder="Type your email" required value="<?= htmlspecialchars($_POST['email'] ?? '') ?>" />
     <input type="password" name="password" placeholder="Type your password" required />
