@@ -19,8 +19,6 @@
 
         <div class="caja">Home</div>
         <div class="caja">Post</div>
-        <div class="caja">Apply</div>
-        <div class="caja">About Us</div>
         <div class="caja"><a href="pages/login.php">Login</a></div>
         <div class="caja"><a href="pages/register.php">Register</a></div>
 
@@ -28,7 +26,6 @@
         <a href="post.php"><div class="caja">Post</div></a>
         <a href="pages/apply.php"><div class="caja">Apply</div></a>
         <a href="about.php"><div class="caja">About Us</div></a>
-        <a href="login.php"><div class="caja">Login</div></a>
 
       </div>
     </div>
