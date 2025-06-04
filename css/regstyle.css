@@ -145,4 +145,14 @@ body {
     width: 90px; /* optional */
   }
   
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: relative; /* atau fixed kalau mau selalu di bawah layar */
+    width: 100%;
+    bottom: 0;
+  }
+  
   

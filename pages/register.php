@@ -4,8 +4,8 @@ session_start();
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require __DIR__ . '/../vendor/autoload.php';  // Adjust if needed
-include __DIR__ . '/../database/db_conection.php';  // Adjust if needed
+require __DIR__ . '/../vendor/autoload.php';  
+include __DIR__ . '/../database/db_conection.php';  
 
 $error = "";
 $success = "";
@@ -197,6 +197,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     });
   });
 </script>
+
 
 </body>
 </html>
