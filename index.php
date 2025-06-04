@@ -17,21 +17,15 @@
       </div>
       <div class="menu">
 
-        <div class="caja">Home</div>
-        <div class="caja">Post</div>
-        <div class="caja">Apply</div>
-        <div class="caja">About Us</div>
+        <div class="caja"><a href="pages/register.php">Home</a></div>
+        <div class="caja"><a href="pages/post.php">Post</a></div>
+        <div class="caja"><a href="pages/apply.php">Apply</a></div>
+        <div class="caja"><a href="pages/about2.php">About Us</a></div>
         <div class="caja"><a href="pages/login.php">Login</a></div>
-        <div class="caja"><a href="pages/register.php">Register</a></div>
 
-        <a href="page/home.php"><div class="caja">Home</div></a>
-        <a href="post.php"><div class="caja">Post</div></a>
-        <a href="pages/apply.php"><div class="caja">Apply</div></a>
-        <a href="about.php"><div class="caja">About Us</div></a>
-        <a href="login.php"><div class="caja">Login</div></a>
 
-      </div>
-    </div>
+   </div>
+  </div>
 
     <div class="imagen-text">
       <img src="pictures/contenedor2/1.jpg" alt="Imagen de club" />

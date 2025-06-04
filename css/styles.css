@@ -4,26 +4,31 @@ body {
     margin: 0;
     font-family: sans-serif;
 }
+
 a {
-  text-decoration: none;  /* Quita la línea debajo */
-  color: inherit;          /* Hace que el texto herede el color del padre (por ejemplo, blanco si .caja es blanco) */
+    text-decoration: none;
+    /* Quita la línea debajo */
+    color: inherit;
+    /* Hace que el texto herede el color del padre (por ejemplo, blanco si .caja es blanco) */
 }
 
-.h1text{
+.h1text {
     color: #000000;
     display: block;
 
     font-size: clamp(16px, 4vw, 40px);
     font-weight: bold;
- 
+
 
 }
-.h3text{
+
+.h3text {
     color: #888888;
     font-size: clamp(16px, 4vw, 23px);
     font-weight: normal;
 
 }
+
 .conte-body {
     display: flex;
     flex-direction: column;
@@ -31,10 +36,10 @@ a {
 }
 
 .conte-header {
- 
+
     display: flex;
     justify-content: space-between;
-   
+
     align-items: center;
     width: 100%;
     max-width: 1850px;
@@ -45,14 +50,17 @@ a {
 }
 
 .subcon1-0 {
-   
+
     font-weight: bold;
     font-size: 75px;
     color: #2b0000;
 }
-.highlight{
-    color: #612D2D; /* Color distinto para "club" */
+
+.highlight {
+    color: #612D2D;
+    /* Color distinto para "club" */
 }
+
 .menu {
     display: flex;
     gap: 25px;
@@ -92,7 +100,8 @@ a {
 .text-inside {
     position: absolute;
     top: 5%;
-    left: 2%; /* Posición desde borde izquierdo */
+    left: 2%;
+    /* Posición desde borde izquierdo */
     color: #612D2D;
     font-size: clamp(16px, 4vw, 60px);
     font-weight: bold;
@@ -103,7 +112,8 @@ a {
     overflow-wrap: break-word;
     white-space: normal;
 }
-.text-inside1-1{
+
+.text-inside1-1 {
     color: #888888;
     font-size: clamp(16px, 4vw, 23px);
     font-weight: normal;
@@ -113,128 +123,155 @@ a {
     white-space: normal;
     line-height: 1.5;
     margin-top: 6%;
-    max-width: 45ch; /* Controla la longitud de línea en caracteres */
+    max-width: 45ch;
+    /* Controla la longitud de línea en caracteres */
     text-align: justify;
 }
-.button1{
+
+.button1 {
     background-color: #ffffff;
     color: #612D2D;
     padding: 14px 45px;
     text-align: center;
     text-decoration: none;
     font-size: 23px;
-    border-radius: 15px; /* ⬅️ Esto le da bordes redondeados tipo píldora */
+    border-radius: 15px;
+    /* ⬅️ Esto le da bordes redondeados tipo píldora */
     display: block;
     margin: 90px auto 0 auto;
     cursor: pointer;
 }
+
 .organization-div {
     width: 100%;
     max-width: 1850px;
     margin: auto;
-  }
-  
-  .sub-organization {
+}
+
+.sub-organization {
     display: flex;
     overflow-x: auto;
     gap: 4rem;
     padding: 10px;
-    scrollbar-width: thin; /* Firefox */
-    scrollbar-color: #d3d1d1 transparent; /* Firefox */
-  }
-  
-  .team-con {
+    scrollbar-width: thin;
+    /* Firefox */
+    scrollbar-color: #d3d1d1 transparent;
+    /* Firefox */
+}
+
+.team-con {
     width: 400px;
     height: 500px;
     background-color: rgb(251, 251, 251);
     flex-shrink: 0;
     border-radius: 8px;
     display: flex;
-    flex-direction: column; /* importante: apila imagen y nombre */
+    flex-direction: column;
+    /* importante: apila imagen y nombre */
     align-items: center;
-    justify-content: flex-start; /* empieza desde arriba */
+    justify-content: flex-start;
+    /* empieza desde arriba */
     overflow: hidden;
-  }
-  
-  .size-img {
+}
+
+.size-img {
     width: 100%;
-    height: 80%; /* ocupa el 80% del div */
-    object-fit: cover; /* recorta o escala manteniendo proporción */
+    height: 80%;
+    /* ocupa el 80% del div */
+    object-fit: cover;
+    /* recorta o escala manteniendo proporción */
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-  }
-  
-  .team-name {
+}
+
+.team-name {
     height: 20%;
     text-align: center;
     font-weight: bold;
     font-size: 1.5rem;
     margin: 0;
     padding-top: 30px;
-  }
-  .story-con{
+}
+
+.story-con {
     display: flex;
-    
+
     width: 100%;
     height: 1000px;
     max-width: 1850px;
 
-  }
-  .size-img2{
+}
+
+.size-img2 {
     width: 100%;
     border-radius: 10px;
-    height: 80%; /* ocupa el 80% del div */
-    object-fit: cover; /* recorta o escala manteniendo proporción */
+    height: 80%;
+    /* ocupa el 80% del div */
+    object-fit: cover;
+    /* recorta o escala manteniendo proporción */
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-  }
-  .size-img3{
+}
+
+.size-img3 {
     width: 40%;
     border-radius: 10px;
-    height: 100%; /* ocupa el 80% del div */
-    object-fit: cover; /* recorta o escala manteniendo proporción */
+    height: 100%;
+    /* ocupa el 80% del div */
+    object-fit: cover;
+    /* recorta o escala manteniendo proporción */
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-  }
-  .story-con-1{
-  display: flex;
-  height: 100%;
+}
 
-  }
-  .story-con-2{
+.story-con-1 {
+    display: flex;
+    height: 100%;
+
+}
+
+.story-con-2 {
     display: flex;
     width: 100%;
     margin-left: 70px;
     height: 100%;
-    flex-direction: column; /* importante: apila imagen y nombre */
+    flex-direction: column;
+    /* importante: apila imagen y nombre */
     align-items: center;
-    justify-content: space-between; /* empieza desde arriba */
-    
-  }
-  .div-1{
+    justify-content: space-between;
+    /* empieza desde arriba */
+
+}
+
+.div-1 {
     width: 880px;
     height: 812px;
-  }
-  .div-2{
-  display: flex;
+}
+
+.div-2 {
+    display: flex;
     width: 100%;
     height: 300px;
-  }
-  .subchil{
-    flex-direction: column;
-    margin-left: 12px; 
+}
 
-  }
-  .div-2text{
+.subchil {
+    flex-direction: column;
+    margin-left: 12px;
+
+}
+
+.div-2text {
     align-items: center;
     margin-top: 45px;
 
-  }
-  .div-3text{
-margin-top: 80px;
-color: #888888;
-  }
-  .footer-con{
+}
+
+.div-3text {
+    margin-top: 80px;
+    color: #888888;
+}
+
+.footer-con {
     display: flex;
     margin-top: 30px;
     background-color: #612D2D;
@@ -243,59 +280,65 @@ color: #888888;
     height: 300px;
     align-items: center;
     justify-content: space-between;
-  }
-  .foot-sub1{
-  
+}
+
+.foot-sub1 {
+
     margin-left: 50px;
-  
-  }
-  .foot-sub2{
 
-  }
+}
 
-  .foot-div2{
+
+.foot-div2 {
     margin-top: 80px;
     margin-left: 50px;
     color: #888888;
 
-  }
-  .sub-foot{
+}
+
+.sub-foot {
 
     margin-right: 17px;
-  }
+}
 
-  .facebook-icon i {
-  color: #ffffff; /* Facebook */
-  font-size: 33px;
+.facebook-icon i {
+    color: #ffffff;
+    /* Facebook */
+    font-size: 33px;
 }
 
 .instagram-icon i {
-  color: #ffffff; /* Instagram */
-  font-size: 33px;
+    color: #ffffff;
+    /* Instagram */
+    font-size: 33px;
 }
 
 .threads-icon i {
-  color: rgb(252, 252, 252); /* Threads */
-   font-size: 33px;
+    color: rgb(252, 252, 252);
+    /* Threads */
+    font-size: 33px;
 }
-  .foot-sub3{
+
+.foot-sub3 {
     margin-top: 2px;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: end;
     margin-right: 14px;
-  }
+}
 
 
-  .foot-div{
+.foot-div {
     margin-top: 25px;
     margin-left: 50px;
     color: #ffffff;
 
-  }
-  .highlight2{
+}
+
+.highlight2 {
     color: #ffffff;
 
-  }
+}
+
 @media (max-width: 600px) {
     .conte-header {
         flex-direction: column-reverse;
@@ -308,10 +351,12 @@ color: #888888;
         justify-content: center;
         gap: 10px;
     }
+
     .text-inside {
-       
+
         font-size: 18px;
         max-width: 90%;
-        left: 5%; /* Más margen en móvil */
+        left: 5%;
+        /* Más margen en móvil */
     }
 }
