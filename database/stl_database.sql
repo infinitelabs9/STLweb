@@ -30,8 +30,16 @@ USE stl_database;
 --
 
 CREATE TABLE `applications` (
-  `application_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+  `application_id` INT AUTO_INCREMENT PRIMARY KEY,
+  `full_name` VARCHAR(255) NOT NULL,
+  `student_id` VARCHAR(50) NOT NULL,
+  `email` VARCHAR(255) NOT NULL,
+  `department` VARCHAR(255) NOT NULL,
+  `cv_filename` VARCHAR(255) NOT NULL, -- nombre o ruta del archivo
+  `team_selected` VARCHAR(100) NOT NULL,
+  `motivation` TEXT, -- respuesta de "Why do you want to join?"
+  `submitted_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
 -- --------------------------------------------------------
 
