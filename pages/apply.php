@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['submit'])) {
     // Conexión a la base de datos
-    $conn = new mysqli('localhost', 'usuario', 'clave', 'nombre_basedatos');
+$conn = new mysqli('localhost', 'root', '', 'stl_database');
     if ($conn->connect_error) {
         die("Error de conexión: " . $conn->connect_error);
     }
@@ -25,7 +25,21 @@ if (isset($_POST['submit'])) {
             VALUES (?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssssss", $full_name, $student_id, $email, $department, $cv_name, $team_selected, $motivation);
+$stmt = $conn->prepare($sql);
+if (!$stmt) {
+    die("Error en prepare: " . $conn->error);
+}
+
+$stmt->bind_param("sssssss", $full_name, $student_id, $email, $department, $cv_name, $team_selected, $motivation);
+
+if ($stmt->execute()) {
+    echo "<p style='color: green; text-align: center;'>¡Aplicación enviada con éxito!</p>";
+} else {
+    echo "<p style='color: red; text-align: center;'>Error al guardar la aplicación: " . $stmt->error . "</p>";
+}
+
+
+
     $stmt->execute();
 
     echo "<p style='color: green; text-align: center;'>¡Aplicación enviada con éxito!</p>";
