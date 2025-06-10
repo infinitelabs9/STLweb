@@ -152,61 +152,68 @@
       color: #555;
     }
 
-    .footer {
-    padding: 30px 50px;
-    color: black;
-    padding: 0;
-  }
+    .footer-con {
+  display: flex;
+  margin-top: 30px;
+  background-color: #612D2D;
+  width: 100%;
+  max-width: 1850px;
+  height: 300px;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  .footer-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    padding-left: 30px;
-    padding-right: 30px;
-  }
+.foot-sub1 {
 
-  .footer-logo {
-    font-size: 24px;
-    font-weight: bold;
-  }
+  margin-left: 50px;
 
-  .footer-logo span {
-    color: #612D2D;
-    font-weight: bold;
-  }
+}
 
-  .footer-social {
-    text-align: center;
-    flex: 1;
-  }
 
-  .footer-social span {
-    font-size: 18px;
-    font-weight: 500;
-  }
+.foot-div2 {
+  margin-top: 80px;
+  margin-left: 50px;
+  color: #888888;
 
-  .footer-social a {
-    margin: 0 8px;
-    text-decoration: none;
-    font-size: 18px;
-    color: black;
-  }
+}
 
-  .footer-bottom {
-    text-align: center;
-    margin-top: 10px;
-    background-color: black;
-    padding: 0;
-  }
+.sub-foot {
 
-  .footer-bottom p {
-    color: #aaa;
-    font-size: 12px;
-    margin: 0;
-  }
+  margin-right: 17px;
+}
 
+.facebook-icon i {
+  color: #ffffff;
+  /* Facebook */
+  font-size: 33px;
+}
+
+.instagram-icon i {
+  color: #ffffff;
+  /* Instagram */
+  font-size: 33px;
+}
+
+.threads-icon i {
+  color: rgb(252, 252, 252);
+  /* Threads */
+  font-size: 33px;
+}
+
+.foot-sub3 {
+  margin-top: 2px;
+  flex-direction: column;
+  align-items: end;
+  margin-right: 14px;
+}
+
+
+.foot-div {
+  margin-top: 25px;
+  margin-left: 50px;
+  color: #ffffff;
+
+}
 
     @media (max-width: 768px) {
       .about-content {
@@ -316,22 +323,23 @@
     </div>
   </div>
 
-  <footer class="footer">
-    <div class="footer-top">
-      <div class="footer-logo">
-        STL<span style="color: #612D2D">club</span>
+ <div class="footer-con">  
+      <h1 class="foot-sub1">STL<span class="highlight2">club</span></h1>
+
+      <div class="foot-sub2">
+        <div class="sub-foot">
+          <a href="https://facebook.com/tuperfil" target="_blank" class="foot-div2 facebook-icon"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://instagram.com/tuperfil" target="_blank" class="foot-div2 instagram-icon"><i class="fab fa-instagram"></i></a>
+          <a href="https://threads.net/tuperfil" target="_blank" class="foot-div2 threads-icon"><i class="fa-brands fa-threads"></i></a>
+        </div>
       </div>
-      <div class="footer-social">
-        <span>Follow us</span><br>
-        <a href="#">insta</a>
-        <a href="#">facebook</a>
+
+      <div class="foot-sub3">
+        <a href="post.php"><h2 class="foot-div">Post</h2></a>
+        <a href="apply.php"><h2 class="foot-div">Apply</h2></a>
+        <a href="about.php"><h2 class="foot-div">About Us</h2></a>
       </div>
-      
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 STLclub. All rights reserved</p>
-    </div>
-  </footer>
 
 
 </body>

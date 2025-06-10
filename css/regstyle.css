@@ -1,158 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: white; /* full background */
-    margin: 0;
-  }
-  
-  .container {
-    display: flex;
-    width: 1100px;   /* overall width */
-    background: none;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  }
-  
-  
-  .left {
-    width: 35%;
-    padding: 60px;
-  }
-  
-  .right {
-    width: 65%; /* give more room to the form */
-    padding: 60px;
-  }
-  
-  
-  .divider {
-    width: 5px; 
-    background-color: white; /* white line */
-  }
-  
-  
-  .left h2 {
-    color: #222;
-    font-size: 28px;
-    margin-bottom: 20px;
-  }
-  
-  .left span {
-    color: #8B0000;
-  }
-  
-  .left p {
-    font-size: 20px;
-    color: #222;
-  }
-  
-  /* Form layout */
-  .left, .right {
-    width: 100%;
-    padding: 40px;
-    background: #e9e9e9;
-  }
-  
-  
-  /* Label + Input side-by-side */
-  .form-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    width: 120px;
-    font-weight: bold;
-    font-size: 14px;
-    color: #333;
-    margin-right: 10px;
-    text-align: right;
-  }
-  
-  .form-group input:not(.key-digit) {
-    width: 250px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    font-size: 16px;
-  }
-  
-  /* Key Code input */
-  .key-code-group {
-    display: flex;
-    align-items: center;
-  }
-  
-  .key-code-group label {
-    width: 120px;
-    font-weight: bold;
-    font-size: 14px;
-    color: #333;
-    margin-right: 10px;
-    text-align: right;
-  }
-  
-  .key-code-inputs {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .key-code-inputs input.key-digit {
-    width: 55px;
-    height: 55px;
-    text-align: center;
-    font-size: 22px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-  }
-  
-  /* Button */
-  .right button {
-    width: 100px;
-    padding: 12px 0;
-    background-color: #6ca933;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    display: block;
-    margin-left: auto;
-  }
-  
-  .right button:hover {
-    background-color: #5b922c;
-  }
-  .stl {
-    color: black !important;
-  }
-  
-  .club {
-    color: #8B0000 !important; /* dark red */
-  }
- 
-  .send-code-btn {
-    margin-left: 10px;
-    padding: 4px 8px;
-    font-size: 0.7em;
-    cursor: pointer;
-    width: 90px; /* optional */
-  }
-  
-  footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    position: relative; /* atau fixed kalau mau selalu di bawah layar */
-    width: 100%;
-    bottom: 0;
-  }
-  
-  
+  font-family: 'Helvetica Neue', sans-serif;
+  background-color: #f5f5f5;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-container {
+  display: flex;
+  width: 850px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.register-left {
+  background-color: #f1f1f1;
+  flex: 1;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.register-left h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.register-left h2 span {
+  color: #a30000;
+}
+
+.register-left p {
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.register-right {
+  flex: 1;
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.key-code {
+  display: flex;
+  gap: 10px;
+}
+
+.key-code input {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  background-color: #70c200;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #5da700;
+}
+
+.error {
+  color: red;
+  margin-bottom: 10px;
+}
+
+.success {
+  color: green;
+  margin-bottom: 10px;
+}
+
+.register-right p {
+  font-size: 14px;
+  color: #555;
+}
+
+.register-right a {
+  color: #70c200;
+  font-weight: bold;
+  text-decoration: none;
+}
+.maroon {
+  color: #800000 !important; /* maroon */
+}
+
+.red {
+  color: #ff0000 !important; /* red */
+}
+
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #444;
+}
+
+.key-code input {
+  margin-right: 5px;
+  text-align: center;
+}

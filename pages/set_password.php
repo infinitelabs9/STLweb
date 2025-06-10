@@ -42,61 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Set Password</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        padding: 40px;
-        background: #f4f4f4;
-    }
-    form {
-        background: white;
-        padding: 30px;
-        max-width: 400px;
-        margin: auto;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    label {
-        margin-top: 15px;
-        font-weight: bold;
-        display: block;
-    }
-    input {
-        width: 100%;
-        padding: 12px;
-        margin-top: 5px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-    }
-    .show-toggle {
-        margin-top: 10px;
-        display: flex;
-        align-items: center;
-        font-size: 14px;
-    }
-    .show-toggle label {
-        margin: 0 0 0 8px;
-    }
-    button {
-        margin-top: 20px;
-        width: 100%;
-        padding: 12px;
-        background-color: #6ca933;
-        color: white;
-        border: none;
-        border-radius: 10px;
-        font-weight: bold;
-        font-size: 16px;
-        cursor: pointer;
-    }
-    .message {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    .error { color: red; }
-    .success { color: green; }
-</style>
+<title>Set Password | STLclub</title>
+<link rel="stylesheet" href="../css/set_password.css?v=2">
 </head>
 <body>
 
@@ -113,18 +60,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <?php if (!$success): ?>
 <form method="POST" action="set_password.php">
-    <label for="password">Password</label>
-    <input id="password" name="password" type="password" required minlength="6" />
+  <div class="header">
+    <img src="../pictures/logo/stlclub.png" alt="STLclub Logo" />
+ 
+    <p>We are better with you</p>
+  </div>
 
-    <label for="password_confirm">Confirm Password</label>
-    <input id="password_confirm" name="password_confirm" type="password" required minlength="6" />
+  <label for="password">Password</label>
+  <input id="password" name="password" type="password" required minlength="6" />
 
-    <div class="show-toggle">
-      <input type="checkbox" id="togglePassword" />
-      <label for="togglePassword">Show Passwords</label>
-    </div>
+  <label for="password_confirm">Confirm Password</label>
+  <input id="password_confirm" name="password_confirm" type="password" required minlength="6" />
 
-    <button type="submit">Set Password</button>
+  <label class="show-toggle" for="togglePassword">
+    <input type="checkbox" id="togglePassword" />
+    Show Passwords
+  </label>
+
+  <button type="submit">Set Password</button>
 </form>
 <?php endif; ?>
 
