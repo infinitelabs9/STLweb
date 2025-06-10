@@ -209,11 +209,11 @@
             STL<span style="color: #612D2D">club</span>
         </div>
         <div class="menu">
-            <a href="home.php" class="caja">Home</a>
-            <a href="post.php" class="caja">Post</a>
-            <a href="apply.php" class="caja">Apply</a>
-            <a href="about.php" class="caja">About Us</a>
-            <a href="login.php" class="caja">Login</a>
+            <a href="/index.php" class="caja">Home</a>
+            <a href="/pages/post.php" class="caja">Post</a>
+            <a href="/pages/apply.php" class="caja">Apply</a>
+            <a href="/pages/about.php" class="caja">About Us</a>
+            <a href="/pages/login.php" class="caja">Login</a>
         </div>
         </div>
     </div>

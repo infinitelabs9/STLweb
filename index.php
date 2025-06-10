@@ -17,12 +17,12 @@
       </div>
       <div class="menu">
 
-        <div class="caja"><a href="pages/home.php">Home</a></div>
+        <div class="caja"><a href="index.php">Home</a></div>
         <div class="caja"><a href="pages/post.php">Post</a></div>
         <div class="caja"><a href="pages/apply.php">Apply</a></div>
-        <div class="caja"><a href="pages/about2.php">About Us</a></div>
+        <div class="caja"><a href="pages/about.php">About Us</a></div>
         <div class="caja"><a href="pages/login.php">Login</a></div>
-        <div class="caja"><a href="pages/register.php">Register</a></div>
+        
 
 
    </div>
@@ -35,7 +35,7 @@
         <p class="text-inside1-1">
           Join STL, Tamkang University’s Rocketry Club, as we design, build, and launch high-powered rockets that push the limits of student innovation. From local projects to international competitions, we’re a team of dreamers, engineers, and explorers committed to shaping the future of aerospace.
         </p>
-        <a href=""><button class="button1">Apply</button></a>
+        <a href="pages/apply.php"><button class="button1">Apply</button></a>
       </div>
     </div>
 
