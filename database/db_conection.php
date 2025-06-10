@@ -1,8 +1,8 @@
 <?php
 $host = '127.0.0.1';
 $dbname = 'stl_database';
-$username = 'root';
-$password = '';
+$username = 'stluser';
+$password = 'claire';
 
 try {
     $dsn = "mysql:host=$host;dbname=$dbname;charset=utf8mb4";
