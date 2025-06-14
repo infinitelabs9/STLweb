@@ -18,11 +18,11 @@
       </div>
       <div class="menu">
 
-        <div class="caja"><a href="pages/register.php">Home</a></div>
-        <div class="caja"><a href="pages/post.php">Post</a></div>
-        <div class="caja"><a href="pages/apply.php">Apply</a></div>
-        <div class="caja"><a href="pages/about2.php">About Us</a></div>
-        <div class="caja"><a href="pages/login.php">Login</a></div>
+        <div class="caja"><a href="register.php">Home</a></div>
+        <div class="caja"><a href="post.php">Post</a></div>
+        <div class="caja"><a href="apply.php">Apply</a></div>
+        <div class="caja"><a href="about2.php">About Us</a></div>
+        <div class="caja"><a href="login.php">Login</a></div>
 
 
    </div>
