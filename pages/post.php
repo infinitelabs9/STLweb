@@ -209,10 +209,47 @@ $conn->close();
   </style>
 </head>
 <body>
-  <div class="conte-body">
-    <div class="conte-header">
-      <div class="subcon1-0">
-        STL<span style="color: #612D2D">club</span>
+
+    <div class="conte-body">
+        <div class="conte-header">
+        <div class="subcon1-0">
+            STL<span style="color: #612D2D">club</span>
+        </div>
+        <div class="menu">
+            <a href="/index.php" class="caja">Home</a>
+            <a href="/pages/post.php" class="caja">Post</a>
+            <a href="/pages/apply.php" class="caja">Apply</a>
+            <a href="/pages/about.php" class="caja">About Us</a>
+            <a href="/pages/login.php" class="caja">Login</a>
+        </div>
+        </div>
+    </div>
+
+     <section class="latest-stories">
+    <h2>Latest Stories</h2>
+
+    <div class="story">
+      <img src="../pictures/imagenes/LINE_ALBUM_2024.08.05 Polaris發射_250512_4.jpg" alt="Rocket Team" />
+      <div class="story-text">
+        <h3>How We Built Our Hybrid Rocket for the 2024 Competition.</h3>
+        <p>You can join in the team which is better with you.</p>
+      </div>
+    </div>
+
+    <div class="story">
+      <img src="../pictures/imagenes/IMG_0944.jpeg" alt="Rocket Team" />
+      <div class="story-text">
+        <h3>How We Built Our Hybrid Rocket for the 2024 Competition.</h3>
+        <p>You can join in the team which is better with you.</p>
+      </div>
+    </div>
+
+    <div class="story">
+      <img src="../pictures/imagenes/LINE_ALBUM_2024.08.05 Polaris發射_250512_10.jpg" alt="Rocket Team" />
+      <div class="story-text">
+        <h3>How We Built Our Hybrid Rocket for the 2024 Competition.</h3>
+        <p>You can join in the team which is better with you.</p>
+
       </div>
       <div class="menu">
         <a href="home.php" class="caja">Home</a>

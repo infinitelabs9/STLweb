@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['submit'])) {
     // Conexión a la base de datos
-    $conn = new mysqli('localhost', 'usuario', 'clave', 'nombre_basedatos');
+$conn = new mysqli('localhost', 'root', '', 'stl_database');
     if ($conn->connect_error) {
         die("Error de conexión: " . $conn->connect_error);
     }
@@ -25,7 +25,21 @@ if (isset($_POST['submit'])) {
             VALUES (?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssssss", $full_name, $student_id, $email, $department, $cv_name, $team_selected, $motivation);
+$stmt = $conn->prepare($sql);
+if (!$stmt) {
+    die("Error en prepare: " . $conn->error);
+}
+
+$stmt->bind_param("sssssss", $full_name, $student_id, $email, $department, $cv_name, $team_selected, $motivation);
+
+if ($stmt->execute()) {
+    echo "<p style='color: green; text-align: center;'>¡Aplicación enviada con éxito!</p>";
+} else {
+    echo "<p style='color: red; text-align: center;'>Error al guardar la aplicación: " . $stmt->error . "</p>";
+}
+
+
+
     $stmt->execute();
 
     echo "<p style='color: green; text-align: center;'>¡Aplicación enviada con éxito!</p>";
@@ -51,11 +65,12 @@ if (isset($_POST['submit'])) {
     <div class="conte-header">
       <div class="subcon1-0">STL<span class="highlight">club</span></div>
       <div class="menu">
-        <a href="home.php"><div class="caja">Home</div></a>
-        <a href="post.php"><div class="caja">Post</div></a>
-        <a href="apply.php"><div class="caja">Apply</div></a>
-        <a href="about.php"><div class="caja">About Us</div></a>
-        <a href="login.php"><div class="caja">Login</div></a>
+          <div class="caja"><a href="/index.php">Home</a></div>
+        <div class="caja"><a href="/pages/post.php">Post</a></div>
+        <div class="caja"><a href="/pages/apply.php">Apply</a></div>
+        <div class="caja"><a href="/pages/about.php">About Us</a></div>
+        <div class="caja"><a href="/pages/login.php">Login</a></div>
+        
       </div>
     </div>
 
