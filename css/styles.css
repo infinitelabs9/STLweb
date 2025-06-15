@@ -1,6 +1,32 @@
 body {
+    align-items: center;
+
     margin: 0;
     font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    /* Quita la línea debajo */
+    color: inherit;
+    /* Hace que el texto herede el color del padre (por ejemplo, blanco si .caja es blanco) */
+}
+
+.h1text {
+    color: #000000;
+    display: block;
+
+    font-size: clamp(16px, 4vw, 40px);
+    font-weight: bold;
+
+
+}
+
+.h3text {
+    color: #888888;
+    font-size: clamp(16px, 4vw, 23px);
+    font-weight: normal;
+
 }
 
 .conte-body {
@@ -10,21 +36,29 @@ body {
 }
 
 .conte-header {
+
     display: flex;
     justify-content: space-between;
+
     align-items: center;
     width: 100%;
-    max-width: 1050px;
+    max-width: 1850px;
     padding: 20px;
+    margin-bottom: 30px;
     box-sizing: border-box;
-
     /* STLclub a la derecha, menú a la izquierda */
 }
 
 .subcon1-0 {
+
     font-weight: bold;
-    font-size: 37px;
+    font-size: 75px;
     color: #2b0000;
+}
+
+.highlight {
+    color: #612D2D;
+    /* Color distinto para "club" */
 }
 
 .menu {
@@ -36,48 +70,275 @@ body {
     background: none;
     border: none;
     color: #555;
-    font-size: 22px;
+    font-size: 30px; /* reduced from 32px */
     cursor: pointer;
     transition: color 0.3s ease;
-    margin-left: 10px;
+    margin-left: 8px; /* slightly smaller margin */
 }
+
 
 .caja:hover {
     color: #612D2D;
 }
 
 .imagen-text {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
-    padding: 20px;
+    max-width: 1850px;
     box-sizing: border-box;
 }
 
 .imagen-text img {
     width: 100%;
-    max-width: 1200px;
-    height: 600px;
+    max-width: 1850px;
+    height: 900px;
     border-radius: 10px;
 }
 
 .text-inside {
     position: absolute;
-    top: 20%;
-    left: 24%;
-    transform: translate(-50%, -50%);
+    top: 5%;
+    left: 2%;
+    /* Posición desde borde izquierdo */
     color: #612D2D;
-    font-size: 33px;
+    font-size: clamp(16px, 4vw, 60px);
     font-weight: bold;
     text-shadow: 2px 2px 5px rgba(74, 70, 70, 0.7);
+    text-align: left;
+    max-width: 70%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.text-inside1-1 {
+    color: #888888;
+    font-size: clamp(16px, 4vw, 23px);
+    font-weight: normal;
+    max-width: 70%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+    line-height: 1.5;
+    margin-top: 6%;
+    max-width: 45ch;
+    /* Controla la longitud de línea en caracteres */
+    text-align: justify;
+}
+
+.button1 {
+    background-color: #ffffff;
+    color: #612D2D;
+    padding: 14px 45px;
     text-align: center;
-    padding-top: 0%;
+    text-decoration: none;
+    font-size: 23px;
+    border-radius: 15px;
+    /* ⬅️ Esto le da bordes redondeados tipo píldora */
+    display: block;
+    margin: 90px auto 0 auto;
+    cursor: pointer;
+}
+
+.organization-div {
+    width: 100%;
+    max-width: 1850px;
+    margin: auto;
+}
+
+.sub-organization {
+    display: flex;
+    overflow-x: auto;
+    gap: 4rem;
+    padding: 10px;
+    scrollbar-width: thin;
+    /* Firefox */
+    scrollbar-color: #d3d1d1 transparent;
+    /* Firefox */
+}
+
+.team-con {
+    width: 400px;
+    height: 500px;
+    background-color: rgb(251, 251, 251);
+    flex-shrink: 0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    /* importante: apila imagen y nombre */
+    align-items: center;
+    justify-content: flex-start;
+    /* empieza desde arriba */
+    overflow: hidden;
+}
+
+.size-img {
+    width: 100%;
+    height: 80%;
+    /* ocupa el 80% del div */
+    object-fit: cover;
+    /* recorta o escala manteniendo proporción */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.team-name {
+    height: 20%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 0;
+    padding-top: 30px;
+}
+
+.story-con {
+    display: flex;
+
+    width: 100%;
+    height: 1000px;
+    max-width: 1850px;
+
+}
+
+.size-img2 {
+    width: 100%;
+    border-radius: 10px;
+    height: 80%;
+    /* ocupa el 80% del div */
+    object-fit: cover;
+    /* recorta o escala manteniendo proporción */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.size-img3 {
+    width: 40%;
+    border-radius: 10px;
+    height: 100%;
+    /* ocupa el 80% del div */
+    object-fit: cover;
+    /* recorta o escala manteniendo proporción */
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.story-con-1 {
+    display: flex;
+    height: 100%;
+
+}
+
+.story-con-2 {
+    display: flex;
+    width: 100%;
+    margin-left: 70px;
+    height: 100%;
+    flex-direction: column;
+    /* importante: apila imagen y nombre */
+    align-items: center;
+    justify-content: space-between;
+    /* empieza desde arriba */
+
+}
+
+.div-1 {
+    width: 880px;
+    height: 812px;
+}
+
+.div-2 {
+    display: flex;
+    width: 100%;
+    height: 300px;
+}
+
+.subchil {
+    flex-direction: column;
+    margin-left: 12px;
+
+}
+
+.div-2text {
+    align-items: center;
+    margin-top: 45px;
+
+}
+
+.div-3text {
+    margin-top: 80px;
+    color: #888888;
+}
+
+.footer-con {
+    display: flex;
+    margin-top: 30px;
+    background-color: #612D2D;
+    width: 100%;
+    max-width: 1850px;
+    height: 300px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.foot-sub1 {
+
+    margin-left: 50px;
 
 }
 
 
+.foot-div2 {
+    margin-top: 80px;
+    margin-left: 50px;
+    color: #888888;
+
+}
+
+.sub-foot {
+
+    margin-right: 17px;
+}
+
+.facebook-icon i {
+    color: #ffffff;
+    /* Facebook */
+    font-size: 33px;
+}
+
+.instagram-icon i {
+    color: #ffffff;
+    /* Instagram */
+    font-size: 33px;
+}
+
+.threads-icon i {
+    color: rgb(252, 252, 252);
+    /* Threads */
+    font-size: 33px;
+}
+
+.foot-sub3 {
+    margin-top: 2px;
+    flex-direction: column;
+    align-items: end;
+    margin-right: 14px;
+}
+
+
+.foot-div {
+    margin-top: 25px;
+    margin-left: 50px;
+    color: #ffffff;
+
+}
+
+.highlight2 {
+    color: #ffffff;
+
+}
 
 @media (max-width: 600px) {
     .conte-header {
@@ -90,5 +351,13 @@ body {
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
+    }
+
+    .text-inside {
+
+        font-size: 18px;
+        max-width: 90%;
+        left: 5%;
+        /* Más margen en móvil */
     }
 }
