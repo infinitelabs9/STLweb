@@ -7,13 +7,11 @@ if (isset($_POST['submit'])) {
         die("Error de conexión: " . $conn->connect_error);
     }
 
-    // Sanitize input (optional but recommended)
     $name = trim($_POST['name']);
-    $student_id = trim($_POST['student_id']);
+    $student_id = trim(string: $_POST['student_id']);
     $title = trim($_POST['title']);
     $message = trim($_POST['message']);
 
-    // Process image upload if exists
     $image_name = null;
     if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
         $uploadDir = 'uploads/';
@@ -25,7 +23,6 @@ if (isset($_POST['submit'])) {
         $allowed_ext = ['jpg', 'jpeg', 'png', 'gif'];
 
         if (in_array($ext, $allowed_ext)) {
-            // To avoid filename conflicts, prepend timestamp
             $image_name = time() . '_' . preg_replace('/[^a-zA-Z0-9._-]/', '', $original_name);
             move_uploaded_file($tmp_name, $uploadDir . $image_name);
         } else {
@@ -34,7 +31,6 @@ if (isset($_POST['submit'])) {
         }
     }
 
-    // Insert into DB with prepared statement
     $sql = "INSERT INTO posts (name, student_id, title, message, image) VALUES (?, ?, ?, ?, ?)";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("sssss", $name, $student_id, $title, $message, $image_name);

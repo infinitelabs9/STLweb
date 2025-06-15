@@ -1,6 +1,6 @@
 <?php
 session_start();
-$isLoggedIn = isset($_SESSION['user_id']); // Adjust based on your login system
+$isLoggedIn = isset($_SESSION['user_id']); 
 
 // Connect to the database
 $host = '127.0.0.1';
@@ -219,7 +219,7 @@ $conn->close();
         <a href="post.php" class="caja">Post</a>
         <a href="apply.php" class="caja">Apply</a>
         <a href="about.php" class="caja">About Us</a>
-        <a href="login.php" class="caja">Login</a>
+        <a href="login.php" class="caja">Login</a> 
       </div>
     </div>
   </div>
@@ -227,7 +227,7 @@ $conn->close();
   <section class="latest-stories">
     <h2>
       <span>Latest Stories</span>
-      <a href="<?= $isLoggedIn ? 'postpage.php' : 'login.php' ?>" class="create-button">Create a Post</a>
+      <a href="<?= $isLoggedIn ? 'postpage.php' : 'login.php?redirect=postpage.php' ?>" class="create-button">Create a Post</a> <!--this is to handle the redirect hehe-->
     </h2>
 
     <?php if (!empty($posts)): ?>

@@ -25,7 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['email'] = $user['email'];
             $_SESSION['first_name'] = $user['first_name'];
 
-            header("Location: user.php");
+            $redirect = $_GET['redirect'] ?? 'user.php'; //go to user
+            header("Location: " . $redirect); //to go back to postpage.php
             exit;
         } else {
             $error = "Invalid email or password.";
@@ -187,7 +188,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <p class="error"><?= htmlspecialchars($error) ?></p>
   <?php endif; ?>
 
-  <form method="post" action="login.php">
+  <form method="post" action="login.php<?= isset($_GET['redirect']) ? '?redirect=' . urlencode($_GET['redirect']) : '' ?>">
   <button type="button" class="oauth-btn">
   <img src="../pictures/logo/google.png" alt="Google" class="icon" />
     Continue with Google
