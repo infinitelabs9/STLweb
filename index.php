@@ -17,7 +17,7 @@
       </div>
       <div class="menu">
 
-        <div class="caja"><a href="pages/home.php">Home</a></div>
+        <div class="caja"><a href="index.php">Home</a></div>
         <div class="caja"><a href="pages/post.php">Post</a></div>
         <div class="caja"><a href="pages/apply.php">Apply</a></div>
         <div class="caja"><a href="pages/about2.php">About Us</a></div>

@@ -37,7 +37,7 @@ if (isset($_POST['submit'])) {
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {
-        echo "<p style='color: green; text-align: center;'>¡Post enviado con éxito!</p>";
+        echo "<p style='color: green; text-align: center;'>¡Post send!</p>";
     } else {
         echo "<p style='color: red; text-align: center;'>Error al enviar el post.</p>";
     }
@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
     <div class="conte-header">
       <div class="subcon1-0">STL<span class="highlight">club</span></div>
       <div class="menu">
-        <a href="home.php"><div class="caja">Home</div></a>
+        <a href="../index.php"><div class="caja">Home</div></a>
         <a href="post.php"><div class="caja">Post</div></a>
         <a href="apply.php"><div class="caja">Apply</div></a>
         <a href="about.php"><div class="caja">About Us</div></a>

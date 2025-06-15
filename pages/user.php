@@ -73,6 +73,7 @@ if (!isset($_SESSION['user_id'])) {
     <p><strong>User ID:</strong> <?= htmlspecialchars($_SESSION['user_id']) ?></p>
   </div>
 
+  <a href="../index.php" class="logout-btn">Go Home</a>
   <a href="logout.php" class="logout-btn">Logout</a>
 </div>
 

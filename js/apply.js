@@ -43,7 +43,8 @@ nextBtn.addEventListener('click', () => {
     current++;
     showStep(current);
   } else {
-    form.submit();
+  document.getElementById('submitBtn').click();
+
   }
 });
 

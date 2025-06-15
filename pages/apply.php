@@ -1,38 +1,60 @@
 <?php
 if (isset($_POST['submit'])) {
-    // Conexión a la base de datos
-    $conn = new mysqli('localhost', 'usuario', 'clave', 'nombre_basedatos');
+    // Conexión a la base de datos usando TCP/IP para evitar error de socket
+$conn = new mysqli('localhost', 'root', '', 'stl_database');
     if ($conn->connect_error) {
         die("Error de conexión: " . $conn->connect_error);
     }
 
-    // Obtener datos del formulario
-    $full_name = $_POST['full_name'];
-    $student_id = $_POST['student_id'];
-    $email = $_POST['email'];
-    $department = $_POST['department'];
-    $team_selected = $_POST['team_selected'];
-    $motivation = $_POST['motivation'];
+    // Sanitizar entradas para mayor seguridad (opcional, pero recomendado)
+    $full_name = $conn->real_escape_string(trim($_POST['full_name']));
+    $student_id = $conn->real_escape_string(trim($_POST['student_id']));
+    $email = $conn->real_escape_string(trim($_POST['email']));
+    $department = $conn->real_escape_string(trim($_POST['department']));
+    $team_selected = $conn->real_escape_string(trim($_POST['team_selected']));
+    $motivation = $conn->real_escape_string(trim($_POST['motivation']));
 
     // Procesar archivo CV
-    $cv_name = $_FILES['cv']['name'];
-    $cv_tmp = $_FILES['cv']['tmp_name'];
-    $destination = 'uploads/' . $cv_name;
-    move_uploaded_file($cv_tmp, $destination);
+    if (isset($_FILES['cv']) && $_FILES['cv']['error'] === UPLOAD_ERR_OK) {
+        // Evitar conflictos en nombres con un prefijo único, ej: timestamp + nombre original
+        $cv_name = time() . '_' . basename($_FILES['cv']['name']);
+        $cv_tmp = $_FILES['cv']['tmp_name'];
+        $destination = __DIR__ . '/uploads/' . $cv_name;
 
-    // Insertar en la base de datos
+        // Crear carpeta uploads si no existe
+        if (!is_dir(__DIR__ . '/uploads')) {
+            mkdir(__DIR__ . '/uploads', 0755, true);
+        }
+
+        if (!move_uploaded_file($cv_tmp, $destination)) {
+            die("Error moving uploaded file.");
+        }
+    } else {
+        die("Error uploading CV file. Error code:" . $_FILES['cv']['error']);
+    }
+
+    // Insertar en la base de datos con consulta preparada
     $sql = "INSERT INTO applications (full_name, student_id, email, department, cv_filename, team_selected, motivation)
             VALUES (?, ?, ?, ?, ?, ?, ?)";
 
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("sssssss", $full_name, $student_id, $email, $department, $cv_name, $team_selected, $motivation);
-    $stmt->execute();
+    if (!$stmt) {
+        die("Error en prepare: " . $conn->error);
+    }
 
-    echo "<p style='color: green; text-align: center;'>¡Aplicación enviada con éxito!</p>";
+    $stmt->bind_param("sssssss", $full_name, $student_id, $email, $department, $cv_name, $team_selected, $motivation);
+
+    if ($stmt->execute()) {
+        echo "<p style='color: green; text-align: center;'>Application sent!</p>";
+    } else {
+        echo "<p style='color: red; text-align: center;'>Error al guardar la aplicación: " . $stmt->error . "</p>";
+    }
+
     $stmt->close();
     $conn->close();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -51,11 +73,12 @@ if (isset($_POST['submit'])) {
     <div class="conte-header">
       <div class="subcon1-0">STL<span class="highlight">club</span></div>
       <div class="menu">
-        <a href="home.php"><div class="caja">Home</div></a>
-        <a href="post.php"><div class="caja">Post</div></a>
-        <a href="apply.php"><div class="caja">Apply</div></a>
-        <a href="about.php"><div class="caja">About Us</div></a>
-        <a href="login.php"><div class="caja">Login</div></a>
+          <div class="caja"><a href="../index.php">Home</a></div>
+        <div class="caja"><a href="post.php">Post</a></div>
+        <div class="caja"><a href="apply.php">Apply</a></div>
+        <div class="caja"><a href="about.php">About Us</a></div>
+        <div class="caja"><a href="login.php">Login</a></div>
+        
       </div>
     </div>
 
@@ -96,9 +119,12 @@ if (isset($_POST['submit'])) {
           <div class="select-wrapper">
             <select id="team" name="team_selected" required>
               <option value="">Select</option>
-              <option value="engineering">Engineering</option>
+              <option value="engineering">System Division</option>
               <option value="design">Design</option>
-              <option value="marketing">Marketing</option>
+              <option value="Structure">Structure</option>
+              <option value="Avionic">Avionic</option>
+              <option value="Propulsion">Propulsion</option>
+              <option value="Parachute">Parachute</option>
             </select>
           </div>
         </div>
